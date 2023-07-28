@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+function idade() {
+            var res;
+            var idade = parseInt(document.getElementById("idade").value);
+            var nome = document.getElementById("nome").value;
+            // console.log(nome);
+            // console.log(idade);
+
+            if (idade<0) {
+                res = "(DIGITE UMA IDADE VÁLIDA)";
+            } else if (idade <= 11) {
+                res = "criança";
+            } else if (idade <= 20) {
+                res = "adolescente";
+            } else if (idade < 65) {
+                res = "adulto";
+            } else if (idade < 110) {
+                res = "idoso";
+            } else if (idade < 10 ** 200) {
+                res = "Matusalém?";
+            } else {
+                res = "?"
+            }
+            document.getElementById("res").innerHTML = nome + " é " + res;
+        }
+</script>
+<style>
+
+    *{
+        text-align: center;
+    }
+
+    body{
+        ;
+    }
+    .titulo {
+        align-items: center;
+        text-align: center;
+        border: 2px solid black;
+        background-color: gray;
+    }
+
+    .inputdetexto {
+        width: 80px;
+        height: 20px;
+
+    }
+
+   
+</style>
+
+<body>
+    <header>
+        <div class="titulo">
+            <h1 style="align-items: center;">Classificar Idade</h1>
+        </div>
+    </header>
+    <br>
+    <main style="background-color: bisque; border: 2px solid black;" >
+        <br>
+            <div class="inserirdados">
+                <div class="nomedapessoa">
+                    <label class="nome" style="font-size: 20px;">Nome</label>
+                    <input type="text" class="inputdetexto" id="nome" >
+                </div>
+                <br>
+                <div class="inserirdados">
+                    <div class="idadedapessoa">
+                        <label class="idade" style="font-size: 20px;">Idade</label>
+                        <input type="text" class="inputdetexto" id="idade" >
+                    </div>
+            </div>
+        </fieldset>
+    <br>
+        <div style="width: 1280px; height: 75px; ;">
+            <button style="border-radius: 15px; width: 150px; height: 45px; position: absolute; right: 760px; top: 250px;" onclick="idade()">Avaliar</button>
+
+        </div>
+<br>
+        <p id="res"></p>
+    </main>
+</body>
+
+</html>
